@@ -136,7 +136,6 @@ int main (void)
     stdio_init_all();
     hard_assert(cyw43_arch_init() == PICO_OK);
     printf("Launching runner\n");
-    sleep_ms(20000);
     xTaskCreate(runner_thread, "TestRunner",
                 TEST_RUNNER_STACK_SIZE, NULL, TEST_RUNNER_PRIORITY, NULL);
     vTaskStartScheduler();

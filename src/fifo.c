@@ -17,9 +17,8 @@ void fifo_worker_handler(QueueHandle_t requests, QueueHandle_t results, int id){
           xQueueReceive(requests,&msg,portMAX_DELAY);
           //perform calculation
           msg.output = msg.input + 5;
+          msg.handled_by = id;
           //put data into the results queue
           xQueueSendToBack(results, &msg, portMAX_DELAY);
-          //possibly add a delay
-          vTaskDelay(1000);
      }
 }
