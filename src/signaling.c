@@ -18,6 +18,5 @@ BaseType_t signal_request_calculate(SemaphoreHandle_t request, SemaphoreHandle_t
           return pdTRUE;
      }
      return pdFALSE;
-     //do stuff
 
 }
