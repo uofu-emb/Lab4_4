@@ -14,9 +14,6 @@ void signal_handle_calculation(SemaphoreHandle_t request, SemaphoreHandle_t resp
 BaseType_t signal_request_calculate(SemaphoreHandle_t request, SemaphoreHandle_t response, struct signal_data *data){
 
      xSemaphoreGive(request);
-     if(xSemaphoreTake(response,1000) == pdTRUE){
-          return pdTRUE;
-     }
-     return pdFALSE;
+     return xSemaphoreTake(response,1000);
 
 }

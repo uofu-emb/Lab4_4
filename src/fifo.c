@@ -9,4 +9,17 @@
 
 void fifo_worker_handler(QueueHandle_t requests, QueueHandle_t results, int id){
 
+     //loop through and calculate
+     while(1){
+          //create a message struct blank
+          struct request_msg msg = {};
+          //pull from requests queue and get the message 
+          xQueueReceive(requests,&msg,portMAX_DELAY);
+          //perform calculation
+          msg.output = msg.input + 5;
+          //put data into the results queue
+          xQueueSendToBack(results, &msg, portMAX_DELAY);
+          //possibly add a delay
+          vTaskDelay(1000);
+     }
 }

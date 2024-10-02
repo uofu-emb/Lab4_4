@@ -6,8 +6,8 @@ target_link_libraries(test_signal PRIVATE
   FreeRTOS-Kernel-Heap4
   unity
 )
-add_executable(test_fifo test_fifo.c ../src/fifo.c unity_config.c)
-target_link_libraries(test_fifo PRIVATE
+add_executable(Lab4_test_fifo test_fifo.c ../src/fifo.c unity_config.c)
+target_link_libraries(Lab4_test_fifo PRIVATE
   pico_stdlib
   pico_async_context_freertos
   FreeRTOS-Kernel-Heap4
